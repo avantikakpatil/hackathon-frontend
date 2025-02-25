@@ -1,38 +1,320 @@
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary-purple: #6429cc;
+  --dark-bg: #13001f;
+  --hackindia-orange: #f26522;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif, 'PROXON';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--dark-bg);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+
+h1, h2 {
+  font-family: 'FontName2', serif;
+}
+
+.register-button {
+  font-family: 'CustomFont', sans-serif;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: transparent;
+  position: relative;
   min-height: 100vh;
+}
+
+/* Background Video */
+.background-video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(19, 0, 31, 0.8);
+  z-index: -1;
+}
+
+/* Header Styles */
+.sign-in-button {
+  background-color: transparent;
+  border: 2px solid var(--primary-purple);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.sign-in-button::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  height: 10px;
+  width: 20px;
+  background-color: var(--dark-bg);
+  border-left: 2px solid var(--primary-purple);
+  border-bottom: 2px solid var(--primary-purple);
+}
+
+.sign-in-button:hover {
+  background-color: var(--primary-purple);
+  transform: translateY(-2px);
+}
+
+/* Navigation Styles */
+.nav-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+}
+
+.nav-buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(100, 41, 204, 0.2);
+  border: 2px solid var(--primary-purple);
+  border-radius: 12px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.purple-button {
+  color: white;
+  background-color: transparent;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.purple-button:hover {
+  background-color: white;
+  color: var(--hackindia-orange);
+}
+
+.purple-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(100, 41, 204, 0.5);
+}
+
+.purple-button.active {
+  background-color: var(--primary-purple);
+}
+
+/* Main Content Styles */
+.date-container {
+  background-color: rgba(100, 41, 204, 0.5);
+  max-width: 400px;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--primary-purple);
+}
+
+.date-container::before,
+.date-container::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 10px;
+  background-color: var(--dark-bg);
+}
+
+.date-container::before {
+  top: 0;
+  left: 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.date-container::after {
+  bottom: 0;
+  right: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.divider-vertical {
+  height: 30px;
+  width: 1px;
+  background-color: #fff;
+  opacity: 0.6;
+}
+
+.register-button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid var(--primary-purple);
+  padding: 10px 30px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: var(--hackindia-orange);
+  border-color: var(--hackindia-orange);
+  transform: translateY(-2px);
+}
+
+.register-button::before,
+.register-button::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 10px;
+  background-color: var(--dark-bg);
+}
+
+.register-button::before {
+  top: -2px;
+  left: 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top: 2px solid var(--primary-purple);
+}
+
+.register-button::after {
+  bottom: -2px;
+  right: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom: 2px solid var(--primary-purple);
+}
+
+.register-button:hover::before {
+  border-top-color: var(--hackindia-orange);
+}
+
+.register-button:hover::after {
+  border-bottom-color: var(--hackindia-orange);
+}
+
+/* Stats and Video Section */
+.play-button {
+  background-color: #ff0000;
+  color: white;
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
 }
 
-.App-link {
-  color: #61dafb;
+.play-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Lightning effect */
+.lightning {
+  opacity: 0.7;
+  filter: brightness(1.5) contrast(1.2);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-purple);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7e3ad6;
+}
+
+/* Video container */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container video,
+.video-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Tailwind Custom Colors */
+.bg-hackIndia-dark {
+  background-color: var(--dark-bg);
+}
+
+.bg-hackIndia-orange {
+  background-color: var(--hackindia-orange);
+}
+
+.text-hackIndia-orange {
+  color: var(--hackindia-orange);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-buttons-container {
+    flex-direction: column;
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .purple-button {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .divider-vertical {
+    display: none;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
   }
 }

@@ -15,3 +15,32 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Additional custom styles */
+@layer components {
+  .menu-button {
+    @apply px-3 py-1 rounded text-sm transition-colors duration-200;
+  }
+  
+  .menu-button-active {
+    @apply bg-purple-900 text-white;
+  }
+  
+  .menu-button-inactive {
+    @apply bg-transparent text-white hover:bg-purple-900/30;
+  }
+  
+  .stats-number {
+    @apply text-4xl font-bold;
+  }
+  
+  .stats-label {
+    @apply text-sm text-gray-300;
+  }
+}
