@@ -22,7 +22,7 @@ function App() {
       <header className="border-b border-purple-800">
         <div className="container mx-auto flex justify-between items-center py-3 px-4">
           <div>
-            <img src="/images/decodeblock-logo.png" alt="DecodeBlock" className="h-8" />
+            <img src="/5346210_d83de9a9102f22425504bf9198a2d000ea087ba5.png" alt="DecodeBlock" className="h-12" />
           </div>
           <button className="sign-in-button px-6 py-2 text-white">
             Sign in
