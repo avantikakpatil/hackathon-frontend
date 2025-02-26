@@ -6,122 +6,165 @@ function App() {
     <div className="App min-h-screen">
       {/* Background Video */}
       <div className="background-video-container">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          className="background-video"
-        >
-          <source src="C:\Users\Avantika Patil\Downloads\-b972-4385-b947-78b4967cb57b.mp4" type="video/mp4" />
+        <video autoPlay loop muted className="background-video">
+          <source src="/b972-4385-b947-78b4967cb57b.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="video-overlay"></div>
       </div>
 
       {/* Top Navigation Bar */}
-      <header className="border-b border-purple-800">
-        <div className="container mx-auto flex justify-between items-center py-3 px-4">
-          <div>
-            <img src="/5346210_d83de9a9102f22425504bf9198a2d000ea087ba5.png" alt="DecodeBlock" className="h-12" />
+      <header 
+  className="border-b-2"
+  style={{ 
+    width: '100%', 
+    height: '100%', 
+    background: '#000000E5', 
+    borderBottom: '2px solid #B026FF80' 
+  }}
+>
+  <div className="container mx-auto flex justify-between items-center py-3 px-4">
+    <img 
+      src="/logodb-PhotoRoom 1.png" 
+      alt="DecodeBlock" 
+      className="h-12" 
+      style={{width: '240px',
+        height: '40px',
+        top: '18px',
+        left: '79px'
+        }}
+    />
+    <button>
+      <img 
+        src="/Component 20.png" 
+        alt="Sign In" 
+        className="object-contain"
+        style={{ width: '150px', height: '53px' }} 
+      />
+    </button>
+  </div>
+</header>
+
+
+      {/* Main Content */}
+      <div className="relative w-full pt-5">
+        <div className="relative z-10 container mx-auto py-4 px-4 text-white flex justify-between items-center">
+          {/* Left Section (Logo) */}
+          <div className="flex items-center space-x-2 px-2">
+          <img 
+    src="/Frame 1000006378.png" 
+    alt="HackIndia" 
+    className="object-contain"
+    style={{ width: '183px', height: '38px', top:'123px', left:'99px', gap:'9px' }}
+  />
           </div>
-          <button className="sign-in-button px-6 py-2 text-white">
-            Sign in
-          </button>
+
+          <nav 
+  className="flex justify-between items-center mx-auto"
+  style={{
+    height: '60px',
+    top: '114px',
+    left: '300px',
+    gap: '10px',
+    borderRadius: '10px',
+    borderWidth: '1px',
+    padding: '12px 30px',
+    border: '1px solid #DFDFDF1A',
+    background: '#28083A',
+    boxShadow: '0px 1px 4px 0px #D9D9D94D'
+  }}
+>
+  {[
+    { src: "/Component 8.png", alt: "Overview" },
+    { src: "/Component 36.png", alt: "Create Team" },
+    { src: "/Component 29.png", alt: "Prize" },
+    { src: "/Component 33.png", alt: "FAQs" },
+    { src: "/Component 32.png", alt: "Judging and Rules" },
+    { src: "/Component 35.png", alt: "Resources" }  ].map((item, index) => (
+    <button key={index} className="hover:brightness-150 transition duration-300">
+      <img src={item.src} alt={item.alt}  />
+    </button>
+  ))}
+</nav>
+
+
         </div>
-      </header>
 
-      <div className="relative w-full">
-        <div className="relative z-10 container mx-auto py-4 px-4 text-white">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              {/* Logo Section */}
-              <div className="flex items-center space-x-2">
-                <div className="bg-hackIndia-orange h-10 w-10 flex items-center justify-center rounded-md">
-                  <span className="text-white font-bold text-lg">H</span>
-                </div>
-                <span className="text-white font-bold text-xl tracking-wider">HACKINDIA</span>
-              </div>
+        <main className="container mx-auto px-4 py-8 pt-2 text-center mb-16">
+  <div className="flex justify-center items-center pt-3 pb-4">
+    <img 
+      src="/singularityNET.png" 
+      alt="SingularityNET" 
+      className="object-contain"
+      style={{ width: '279.93px', height: '76px' }}
+    />
+  </div>
+
+
+
+          <div className="mb-6 pb-5">
+          <img
+    src="/HackIndia2025.png" 
+    alt="HackIndia2025 Logo"
+    className="hackindia-logo"
+  />
+            <div className="flex justify-center pt-2">
+  <img
+    src="/India’s Biggest Web3 & AI Hackathon.png"
+    alt="India’s Biggest Web3 & AI Hackathon"
+    className="hackathon-tagline"
+  />
+</div>
+
+          </div>
+
+          <div className="flex justify-center mb-10">
+            <div className="date-container flex justify-center">
+  <img
+    src="/February 28 - September 28.png"
+    alt="Hackathon Date"
+    className="hackathon-date"
+  />
+</div>
+          </div>
+
+          <div className="flex justify-center items-center space-x-8 mb-16">
+            <div className="flex items-center">
+              <span className="text-hackIndia-orange font-bold text-[25px] leading-[36.88px] tracking-[3%] font-vtf">150+</span>
+              <span className="text-white ml-2 text-[25px] font-vtf">Prize Pool</span>
+            </div>
+
+            <div className="divider-vertical mx-4"></div>
+
+            <div className="flex items-center">
+              <span className="text-hackIndia-orange font-bold text-[25px] leading-[36.88px] tracking-[3%] font-vtf">150+</span>
+              <span className="text-white ml-2 text-[25px] font-vtf">Universities</span>
+            </div>
+
+            <div className="divider-vertical mx-4"></div>
+
+            <div className="flex items-center">
+              <span className="text-hackIndia-orange font-bold text-[25px] leading-[36.88px] tracking-[3%] font-VTF Justina GEO">25,000+</span>
+              <span className="text-white ml-2 text-[25px] font-VTF Justina GEO">Students</span>
             </div>
           </div>
 
-          {/* Navigation Section */}
-          <div className="nav-container mt- mb-6">
-            <nav className="nav-buttons-container">
-              <button className="purple-button">
-                Overview
-              </button>
-              <button className="purple-button">
-                Create Team
-              </button>
-              <button className="purple-button">
-                Prizes & Sponsors
-              </button>
-              <button className="purple-button">
-                FAQs
-              </button>
-              <button className="purple-button">
-                Judging & Rules
-              </button>
-              <button className="purple-button">
-                Resources
-              </button>
-            </nav>
-          </div>
-
-          {/* Hero Section */}
-          <main className="container mx-auto px-4 py-8 text-center mb-16">
-            <div className="flex justify-center mb-12">
-              <img
-                src="/images/singularitynet-logo.png"
-                alt="SingularityNET"
-                className="h-16"
-              />
-            </div>
-
-            <div className="mb-6">
-              <h1 className="text-6xl font-bold mb-4">
-                <span className="text-hackIndia-orange">Ha</span>
-                <span className="text-white " >ckIndia</span>
-                <span className="text-white">2025</span>
-              </h1>
-              <p className="text-white text-xl mb-8">
-                India's Biggest Web3 & AI Hackathon
-              </p>
-            </div>
-
-            <div className="flex justify-center mb-10">
-              <div className="date-container py-3 px-8">
-                <p className="text-white text-lg">February 28 - September 28</p>
-              </div>
-            </div>
-
-            <div className="flex justify-center items-center space-x-8 mb-16">
-              <div className="flex items-center">
-                <span className="text-hackIndia-orange font-bold text-2xl">$150+</span>
-                <span className="text-white ml-2">Prize Pool</span>
-              </div>
-              
-              <div className="divider-vertical mx-4"></div>
-              
-              <div className="flex items-center">
-                <span className="text-hackIndia-orange font-bold text-2xl">150+</span>
-                <span className="text-white ml-2">University</span>
-              </div>
-              
-              <div className="divider-vertical mx-4"></div>
-              
-              <div className="flex items-center">
-                <span className="text-hackIndia-orange font-bold text-2xl">25,000+</span>
-                <span className="text-white ml-2">Students</span>
-              </div>
-            </div>
-
-            <button className="register-button font-bold">
-              Register now!
-            </button>
-          </main>
-        </div>
+          <button 
+  className="relative text-white text-lg font-bold px-6 py-3"
+  style={{
+    background: "black",
+    border: "2px solid #B026FF",
+    position: "relative",
+    clipPath: "polygon(0% 0%, 95% 0%, 100% 20%, 100% 100%, 5% 100%, 0% 80%)",
+    boxShadow: "0px 0px 8px #B026FF",
+  }}
+>
+  Register now!
+</button>
+        </main>
       </div>
+    
+
 
       {/* Sponsors Section */}
       <div className="bg-gray-100 py-6">

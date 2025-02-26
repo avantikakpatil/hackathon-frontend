@@ -285,6 +285,56 @@ h1, h2 {
   object-fit: cover;
 }
 
+
+.hackindia-logo {
+  height: 115px;
+  position: relative;
+  top: 0px;
+  left:16%;
+  font-family: "PROXON", sans-serif;
+  font-weight: 400;
+  font-size: 95px;
+  line-height: 108px;
+  letter-spacing: 10%;
+  
+}
+
+.hackathon-tagline {
+  width: auto; /* Adjust width automatically */
+  max-width: 664px; /* Maintain readability */
+  height: auto;
+  object-fit: contain; /* Ensures proper scaling */
+  margin-top: 10px;
+}
+
+.date-container {
+  width: 377px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border-width: 1px;
+  padding: 10px 30px;
+  background: linear-gradient(91.08deg, #6A1799 -29.38%, #230833 105.37%);
+  border: 1px solid rgba(217, 217, 217, 0.3);
+}
+
+button img:hover {
+  transform: scale(1.0);
+  transition: 0.3s;
+}
+
+
+.hackathon-date {
+  width: auto;
+  height: 32px; /* Adjust this if needed */
+  object-fit: contain;
+}
+
+
+
+
 /* Tailwind Custom Colors */
 .bg-hackIndia-dark {
   background-color: var(--dark-bg);
