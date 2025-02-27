@@ -7,8 +7,7 @@ function App() {
       {/* Background Video */}
       <div className="background-video-container">
         <video autoPlay loop muted className="background-video">
-          <source src="/b972-4385-b947-78b4967cb57b.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
+          <source src="/-b972-4385-b947-78b4967cb57b.mp4" type="video/mp4" />
         </video>
         <div className="video-overlay"></div>
       </div>
@@ -23,7 +22,7 @@ function App() {
     borderBottom: '2px solid #B026FF80' 
   }}
 >
-  <div className="container mx-auto flex justify-between items-center py-3 px-4">
+  <div className="container mx-auto flex justify-between items-center py-3 px-4 ml-14">
     <img 
       src="/logodb-PhotoRoom 1.png" 
       alt="DecodeBlock" 
@@ -38,7 +37,7 @@ function App() {
       <img 
         src="/Component 20.png" 
         alt="Sign In" 
-        className="object-contain"
+        className="object-contain mr-20"
         style={{ width: '150px', height: '53px' }} 
       />
     </button>
@@ -47,10 +46,10 @@ function App() {
 
 
       {/* Main Content */}
-      <div className="relative w-full pt-5">
+      <div className="relative w-full pt-5 ">
         <div className="relative z-10 container mx-auto py-4 px-4 text-white flex justify-between items-center">
           {/* Left Section (Logo) */}
-          <div className="flex items-center space-x-2 px-2">
+          <div className="flex items-center space-x-2 px-0 ml-20">
           <img 
     src="/Frame 1000006378.png" 
     alt="HackIndia" 
@@ -60,7 +59,7 @@ function App() {
           </div>
 
           <nav 
-  className="flex justify-between items-center mx-auto"
+  className="flex justify-between items-center mx-auto ml-20"
   style={{
     height: '60px',
     top: '114px',
@@ -86,35 +85,29 @@ function App() {
     </button>
   ))}
 </nav>
+</div>
 
-
-        </div>
-
-        <main className="flex flex-col items-center justify-center min-h-screen text-center px-4 py-8">
-  <div className="flex justify-center items-center pt-3 pb-4">
+        <main className="flex flex-col items-center justify-center  text-center px-2 py-8">
     <img 
       src="/singularityNET.png" 
       alt="SingularityNET" 
-      className="object-contain w-[280px] h-[76px]"
+      className="object-contain w-[300px] h-[90px] flex justify-center items-center pb-4"
     />
-  </div>
 
-  <div className="mb-6 pb-5">
-  <div className="ml-[15px]">
+  <div className="mb-6 pb-1">
+  <div className="ml-[-270px]">
     <img
       src="/HackIndia2025.png" 
       alt="HackIndia2025 Logo"
       className="hackindia-logo"
     />
     </div>
-    <div className="mb-6 pb-5"></div>
-    <div className="flex justify-center pt-2">
+    <div className="mb-1 pb-1"></div>
       <img
         src="/India’s Biggest Web3 & AI Hackathon.png"
         alt="India’s Biggest Web3 & AI Hackathon"
         className="hackathon-tagline"
       />
-    </div>
   </div>
 
   <div className="flex justify-center mb-10">
@@ -148,11 +141,11 @@ function App() {
     </div>
   </div>
 
-  <button className="w-[177px] h-[59px]">
+  <button className="w-[177px] h-[59px] mb-5">
     <img 
       src="/Component 17.png" 
       alt="Register Button" 
-      className="w-full h-full object-contain"
+      className="w-full h-full object-contain "
     />
   </button>
 </main>
@@ -184,7 +177,7 @@ function App() {
       <div className="container mx-auto py-16 px-4 flex flex-wrap items-center pl-0 ml-0">
         <div className="w-full md:w-1/3 pr-4 md:pr-8">
           {/* Lightning Effect */}
-          <div className="mb-11 pl-0 ml-0">
+          <div className="mb-11 pl-0 ml-0 mt-14">
           <img src="/Untitled design (96) 1.png" alt="Lightning effect" className="w-48" />
           </div>
           
@@ -194,7 +187,7 @@ function App() {
   style={{
     width: "657px",
     height: "228px",
-    top: "1144px",
+    top: "1100px",
     left: "95px",
     gap: "20px"
   }}
@@ -235,7 +228,7 @@ function App() {
         <div className="w-full flex justify-center">
   {/* Video Container */}
   <div 
-    className="absolute w-[641px] h-[351px] top-[1019px] left-[734px] rounded-lg overflow-hidden shadow-lg"
+    className="absolute w-[641px] h-[351px] top-[975px] left-[734px] rounded-lg overflow-hidden shadow-lg"
     >
     <iframe 
       className="w-full h-full rounded-lg"
@@ -250,6 +243,8 @@ function App() {
         </div>
       </div>
       
+
+
       {/* Sponsors Section */}
 <div 
   className="absolute bg-gray-100 w-full flex items-center py-2 mt-5"
@@ -257,6 +252,7 @@ function App() {
     height: "90px",
     top: "1510px",
     left: "1px"
+    
   }}
 >
   <div 
@@ -272,15 +268,32 @@ function App() {
     <img src="Frame 1000006391.png" alt="Sponsor Frame" className="w-[1282px] h-[100px]" />
     
   </div>
-
-  <div>
-  <footer className="bg-purple-900 text-white py-12 border-t border-purple-800 mt-5">
-  <div className="container mx-auto px-4">
-    {/* Footer content will go here */}
-  </div>
-</footer>
-</div>
   
+</div>
+
+<div 
+  className="absolute  w-full flex items-center py-2 mt-5"
+  style={{
+    height: "150px",
+    top: "1600px",
+    left: "1px"
+    
+  }}
+>
+  <div 
+  >
+<footer className=" text-white text-center py-4 mt-auto relative ml-[200px] h-8">
+        {/* Footer Image */}
+        <div >
+          <img
+            src="/Group 1000006140.png"
+            alt="Footer Graphic"
+            style={{ width: "1133px", height: "24px" }}
+          />
+        </div>
+      </footer>
+  
+</div>
 </div>
 
 </div>
