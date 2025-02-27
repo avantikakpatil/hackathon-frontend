@@ -171,41 +171,57 @@ h1, h2 {
   opacity: 0.6;
 }
 
+/* Register Button */
 .register-button {
-  background-color: transparent;
+  background-color: var(--primary-purple);
   color: white;
   border: 2px solid var(--primary-purple);
-  padding: 10px 30px;
+  padding: 12px 35px;
   border-radius: 8px;
-  font-weight: 500;
-  font-size: 1.1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(128, 0, 128, 0.3); /* Soft glow effect */
+  cursor: pointer;
 }
 
+/* Hover Effect - Brighter and Slightly Raised */
 .register-button:hover {
   background-color: var(--hackindia-orange);
   border-color: var(--hackindia-orange);
-  transform: translateY(-2px);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 87, 34, 0.5); /* Stronger glow */
 }
 
-.register-button::before,
+/* Active (Click) Effect - Slight Press */
+.register-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 5px rgba(255, 87, 34, 0.6);
+}
+
+/* Animated Shine Effect */
 .register-button::after {
-  content: '';
+  content: "";
   position: absolute;
-  width: 20px;
-  height: 10px;
-  background-color: var(--dark-bg);
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 50%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.4s ease-out;
+  opacity: 0.7;
 }
 
-.register-button::before {
-  top: -2px;
-  left: 20px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-top: 2px solid var(--primary-purple);
+/* Shine Effect on Click */
+.register-button:active::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
 }
+
 
 .background-video {
   position: absolute;
