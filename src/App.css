@@ -1,5 +1,6 @@
 /* App.css */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://example.com/path-to-proxon-font.css');
 
 :root {
   --primary-purple: #6429cc;
@@ -19,19 +20,21 @@ body {
   overflow-x: hidden;
 }
 
-
 h1, h2 {
   font-family: 'FontName2', serif;
 }
 
-.register-button {
-  font-family: 'CustomFont', sans-serif;
-}
-
 .App {
-  background-color: transparent;
-  position: relative;
-  min-height: 100vh;
+  
+    background: rgba(18, 0, 22, 0.621); /* Dark purple with adjusted transparency */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+
 }
 
 /* Background Video */
@@ -43,6 +46,7 @@ h1, h2 {
   height: 100%;
   z-index: -2;
   overflow: hidden;
+  background-color: #000000E5; /* Added background color here as well */
 }
 
 .background-video {
@@ -57,11 +61,39 @@ h1, h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(20, 1, 31, 0.8);
+  background-color: #15011ee5 !important;
   z-index: -1;
 }
 
+/* Add this to ensure your tagline is properly displayed */
+.hackathon-tagline {
+  width: auto;
+  max-width: 664px;
+  height: auto;
+  object-fit: contain;
+  margin-top: 10px;
+  display: block; /* Make sure it's displayed as a block element */
+}
 /* Header Styles */
+.main-header {
+  width: 100%;
+  height: 100%;
+  background: #000000E5;
+  border-bottom: 2px solid #B026FF80;
+}
+
+.header-logo {
+  width: 240px;
+  height: 40px;
+  top: 18px;
+  left: 79px;
+}
+
+.sign-in-btn {
+  width: 150px;
+  height: 53px;
+}
+
 .sign-in-button {
   background-color: transparent;
   border: 2px solid var(--primary-purple);
@@ -89,6 +121,27 @@ h1, h2 {
 }
 
 /* Navigation Styles */
+.main-nav {
+  height: 60px;
+  top: 114px;
+  left: 300px;
+  gap: 10px;
+  border-radius: 10px;
+  border-width: 1px;
+  padding: 12px 30px;
+  border: 1px solid #DFDFDF1A;
+  background: #28083A;
+  box-shadow: 0px 1px 4px 0px #D9D9D94D;
+}
+
+.hackindia-small-logo {
+  width: 183px;
+  height: 38px;
+  top: 123px;
+  left: 99px;
+  gap: 9px;
+}
+
 .nav-container {
   display: flex;
   justify-content: center;
@@ -103,6 +156,11 @@ h1, h2 {
   border-radius: 12px;
   padding: 4px;
   gap: 4px;
+}
+
+.nav-button:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
 }
 
 .purple-button {
@@ -132,13 +190,27 @@ h1, h2 {
 }
 
 /* Main Content Styles */
+.main-content-wrapper {
+  position: relative;
+}
+
+.singularity-logo {
+  object-fit: contain;
+}
+
 .date-container {
-  background-color: rgba(100, 41, 204, 0.5);
-  max-width: 400px;
-  border-radius: 12px;
+  width: 377px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border-width: 1px;
+  padding: 10px 30px;
+  background: linear-gradient(91.08deg, #6A1799 -29.38%, #230833 105.37%);
+  border: 1px solid rgba(217, 217, 217, 0.3);
   position: relative;
   overflow: hidden;
-  border: 1px solid var(--primary-purple);
 }
 
 .date-container::before,
@@ -172,6 +244,11 @@ h1, h2 {
 }
 
 /* Register Button */
+.register-btn-container img:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
 .register-button {
   background-color: var(--primary-purple);
   color: white;
@@ -183,26 +260,24 @@ h1, h2 {
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 10px rgba(128, 0, 128, 0.3); /* Soft glow effect */
+  box-shadow: 0 4px 10px rgba(128, 0, 128, 0.3);
   cursor: pointer;
+  font-family: 'CustomFont', sans-serif;
 }
 
-/* Hover Effect - Brighter and Slightly Raised */
 .register-button:hover {
   background-color: var(--hackindia-orange);
   border-color: var(--hackindia-orange);
   color: #fff;
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(255, 87, 34, 0.5); /* Stronger glow */
+  box-shadow: 0 6px 20px rgba(255, 87, 34, 0.5);
 }
 
-/* Active (Click) Effect - Slight Press */
 .register-button:active {
   transform: scale(0.95);
   box-shadow: 0 2px 5px rgba(255, 87, 34, 0.6);
 }
 
-/* Animated Shine Effect */
 .register-button::after {
   content: "";
   position: absolute;
@@ -216,41 +291,36 @@ h1, h2 {
   opacity: 0.7;
 }
 
-/* Shine Effect on Click */
 .register-button:active::after {
   transform: translate(-50%, -50%) scale(1);
   opacity: 0;
 }
 
-
-.background-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-
-.register-button::after {
-  bottom: -2px;
-  right: 20px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom: 2px solid var(--primary-purple);
-}
-
-.register-button:hover::before {
-  border-top-color: var(--hackindia-orange);
-}
-
-.register-button:hover::after {
-  border-bottom-color: var(--hackindia-orange);
-}
-
 /* Stats and Video Section */
+.stats-section {
+  background-color: var(--dark-bg);
+}
+
+.stats-grid {
+  position: absolute;
+  width: 657px;
+  height: 228px;
+  top: 1100px;
+  left: 95px;
+  gap: 20px;
+}
+
+.video-iframe-container {
+  position: absolute;
+  width: 641px;
+  height: 351px;
+  top: 975px;
+  left: 800px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
 .play-button {
   background-color: #ff0000;
   color: white;
@@ -265,6 +335,12 @@ h1, h2 {
   box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
 }
 
+.stats-section {
+  background: rgba(11, 2, 12, 0); /* Dark purple with transparency */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
 .play-button:hover {
   transform: scale(1.1);
   box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
@@ -274,6 +350,69 @@ h1, h2 {
 .lightning {
   opacity: 0.7;
   filter: brightness(1.5) contrast(1.2);
+}
+
+/* Sponsors section */
+.sponsors-section {
+  position: absolute;
+  height: 90px;
+  top: 1510px;
+  left: 1px;
+  background-color: #f8f9fa;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.sponsors-container {
+  width: 1282px;
+  height: 100px;
+  top: -4px;
+  left: 100px;
+  gap: 60px;
+  margin-left: 100px; /* Added left margin */
+
+}
+
+.sponsors-frame {
+  width: 1282px;
+  height: 100px;
+  left:60px;
+}
+
+
+
+/* Footer section */
+.footer-section {
+  position: absolute;
+  height: 150px;
+  top: 1600px;
+  left: 1px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  background: rgba(12, 1, 14, 0.85); /* Dark purple with transparency */
+
+}
+
+.footer-container {
+  color: white;
+  text-align: center;
+  padding-top: 0px;
+  margin-top: auto;
+  position: relative;
+  margin-left: 200px;
+  height: 32px;
+
+}
+
+
+
+.footer-graphic {
+  width: 1133px;
+  height: 24px;
 }
 
 /* Custom scrollbar */
@@ -294,64 +433,34 @@ h1, h2 {
   background: #7e3ad6;
 }
 
-/* Video container */
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  height: 0;
-  overflow: hidden;
-}
-
-.video-container video,
-.video-container img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-
+/* HackIndia specific styles */
 .hackindia-logo {
   height: 115px;
   position: relative;
   top: 0px;
-  left:16%;
+  left: 16%;
   font-family: "PROXON", sans-serif;
   font-weight: 400;
   font-size: 95px;
   line-height: 108px;
   letter-spacing: 10%;
-  
 }
 
 .hackathon-tagline {
-  width: auto; /* Adjust width automatically */
-  max-width: 664px; /* Maintain readability */
+  width: auto;
+  max-width: 664px;
   height: auto;
-  object-fit: contain; /* Ensures proper scaling */
+  object-fit: contain;
   margin-top: 10px;
 }
 
-.date-container {
-  width: 377px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  border-width: 1px;
-  padding: 10px 30px;
-  background: linear-gradient(91.08deg, #6A1799 -29.38%, #230833 105.37%);
-  border: 1px solid rgba(217, 217, 217, 0.3);
+.hackathon-date {
+  width: auto;
+  height: 32px;
+  object-fit: contain;
 }
 
-button img:hover {
-  transform: scale(1.0);
-  transition: 0.3s;
-}
-
+/* Animation for sponsor scroll */
 @keyframes scroll {
   from {
     transform: translateX(0);
@@ -366,18 +475,6 @@ button img:hover {
   animation: scroll 20s linear infinite;
   width: max-content;
 }
-
-
-
-
-.hackathon-date {
-  width: auto;
-  height: 32px; /* Adjust this if needed */
-  object-fit: contain;
-}
-
-
-
 
 /* Tailwind Custom Colors */
 .bg-hackIndia-dark {
@@ -410,5 +507,35 @@ button img:hover {
   
   h1 {
     font-size: 2.5rem;
+  }
+
+  .stats-grid {
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  .video-iframe-container {
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: 20px;
+    margin-top: 250px;
+  }
+
+  .sponsors-section, .footer-section {
+    position: relative;
+    top: auto;
+    margin-top: 20px;
+  }
+
+  .sponsors-container, .footer-container {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .sponsors-frame, .footer-graphic {
+    width: 100%;
   }
 }
