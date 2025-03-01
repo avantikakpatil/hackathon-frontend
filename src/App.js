@@ -188,78 +188,92 @@ function App() {
       </div>
 
       <div className="stats-section bg-purple-1500 text-white py-12 md:py-20 relative">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row relative">
-          {/* Stats Column - Positioned precisely on desktop */}
-          <div className="w-full md:w-1/2 relative">
-          <div 
-  className="lightning-container mb-6 md:mb-0 md:absolute"
-  style={{
-    width: "273px",
-    height: "70px",
-        left: "-60px"  }}
->
-  <img 
-    src="/Untitled design (96) 1.png" 
-    alt="Lightning effect" 
-    className="w-full h-full object-contain md:w-[273px] md:h-[70px]"
-  />
-</div>
-            
-            {/* Stats Grid with precise size and positioning */}
-            <div className="stats-grid md:absolute md:mt-0 mt-10" style={{width: '657px', height: '228px', left: '0px', top: '107px'}}>
-              {/* Main stat */}
-              <div className="mb-8 text-center md:text-left">
-                <h3 className="text-4xl md:text-6xl font-bold text-white">
-                  150<span className="text-2xl md:text-4xl">+</span>
-                </h3>
-                <p className="text-white text-lg md:text-xl tracking-wider">Universities participating</p>
-              </div>
-
-              {/* Three smaller stats with specified gap */}
-              <div className="flex flex-wrap w-full justify-center md:justify-start" style={{gap: '20px'}}>
-                <div className="w-full sm:w-auto mb-8 text-center md:text-left">
-                  <h3 className="text-4xl md:text-6xl font-bold text-white">
-                    72<span className="text-2xl md:text-4xl">+</span>
-                  </h3>
-                  <p className="text-white text-lg md:text-xl tracking-wider">Judges</p>
-                </div>
-
-                <div className="w-full sm:w-auto mb-8 text-center md:text-left">
-                  <h3 className="text-4xl md:text-6xl font-bold text-white">
-                    21
-                  </h3>
-                  <p className="text-white text-lg md:text-xl tracking-wider">Hackathons</p>
-                </div>
-
-                <div className="w-full sm:w-auto mb-8 text-center md:text-left">
-                  <h3 className="text-4xl md:text-6xl font-bold text-white">
-                    36<span className="text-2xl md:text-4xl">+</span>
-                  </h3>
-                  <p className="text-white text-lg md:text-xl tracking-wider">Great Speakers</p>
-                </div>
-              </div>
-            </div>
+  <div className="container mx-auto px-4">
+    <div className="flex flex-col md:flex-row relative">
+      {/* Stats Column - Positioned precisely on desktop */}
+      <div className="w-full md:w-1/2 relative">
+        <div 
+          className="lightning-container mb-6 md:mb-0 md:absolute hidden sm:block"
+          style={{
+            width: "273px",
+            height: "70px",
+            left: "-60px"
+          }}
+        >
+          <img 
+            src="/Untitled design (96) 1.png" 
+            alt="Lightning effect" 
+            className="w-full h-full object-contain md:w-[273px] md:h-[70px]"
+          />
+        </div>
+        
+        {/* Stats Grid with responsive adjustments */}
+        <div className="stats-grid md:absolute md:mt-0 mt-10 mx-auto md:mx-0" 
+             style={{
+               width: '100%', 
+               maxWidth: '657px', 
+               height: 'auto',
+               left: '0px', 
+               top: '107px'
+             }}>
+          {/* Main stat */}
+          <div className="mb-8 text-center md:text-left">
+            <h3 className="text-4xl md:text-6xl font-bold text-white">
+              150<span className="text-2xl md:text-4xl">+</span>
+            </h3>
+            <p className="text-white text-lg md:text-xl tracking-wider">Universities participating</p>
           </div>
 
-          {/* Video Container with exact dimensions */}
-          <div className="w-full md:w-1/2 mt-64 md:mt-0">
-            <div className="video-iframe-container md:absolute" style={{width: '641px', height: '351px', top: '0px', right: '0px'}}>
-              <iframe 
-                className="w-full h-full rounded-lg"
-                style={{width: '641px', height: '351px'}}
-                src="https://www.youtube.com/embed/gi1kkMbfNAE"
-                title="HackIndia 2024 Finals - Highlights"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+          {/* Three smaller stats with specified gap */}
+          <div className="flex flex-wrap w-full justify-center md:justify-start" style={{gap: '20px'}}>
+            <div className="w-full sm:w-auto mb-8 text-center md:text-left">
+              <h3 className="text-4xl md:text-6xl font-bold text-white">
+                72<span className="text-2xl md:text-4xl">+</span>
+              </h3>
+              <p className="text-white text-lg md:text-xl tracking-wider">Judges</p>
+            </div>
+
+            <div className="w-full sm:w-auto mb-8 text-center md:text-left">
+              <h3 className="text-4xl md:text-6xl font-bold text-white">
+                21
+              </h3>
+              <p className="text-white text-lg md:text-xl tracking-wider">Hackathons</p>
+            </div>
+
+            <div className="w-full sm:w-auto mb-8 text-center md:text-left">
+              <h3 className="text-4xl md:text-6xl font-bold text-white">
+                36<span className="text-2xl md:text-4xl">+</span>
+              </h3>
+              <p className="text-white text-lg md:text-xl tracking-wider">Great Speakers</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
+      {/* Video Container with responsive dimensions */}
+      <div className="w-full md:w-1/2 mt-96 sm:mt-80 md:mt-0">
+        <div className="video-iframe-container relative md:absolute mx-auto md:mx-0" 
+             style={{
+               width: '100%',
+               maxWidth: '641px', 
+               height: '0',
+               paddingBottom: '56.25%', /* 16:9 aspect ratio */
+               top: '0px', 
+               right: '0px'
+             }}>
+          <iframe 
+            className="absolute top-0 left-0 w-full h-full rounded-lg"
+            src="https://www.youtube.com/embed/gi1kkMbfNAE"
+            title="HackIndia 2024 Finals - Highlights"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
       {/* Sponsors Section */}
       <div className="sponsors-section mt-20 md:mt-40 lg:mt-60">
         <div className="sponsors-container px-4">
