@@ -84,6 +84,7 @@ h1, h2 {
 .header-logo {
   width: 200px;
   height: auto;
+  margin-left: 5%;
 }
 
 .sign-in-btn {
@@ -119,6 +120,7 @@ h1, h2 {
 
 /* Navigation Styles */
 .main-nav {
+  margin-right: 23%;
   height: auto;
   border-radius: 10px;
   border-width: 1px;
@@ -130,13 +132,14 @@ h1, h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .hackindia-small-logo {
-  width: 150px;
+  width: 170px;
   height: auto;
   max-width: 100%;
+  margin-left: 55%;
 }
 
 .nav-container {
@@ -335,6 +338,8 @@ h1, h2 {
   width: 100%;
   max-width: 657px;
   margin: 0 auto;
+  margin-left: 20%;
+  margin-bottom: 25%;
 }
 
 .lightning-container {

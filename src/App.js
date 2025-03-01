@@ -124,7 +124,7 @@ function App() {
               />
             </div>
             <img
-              src="/India's Biggest Web3 & AI Hackathon.png"
+              src="/India’s Biggest Web3 & AI Hackathon.png"
               alt="India's Biggest Web3 & AI Hackathon"
               className="hackathon-tagline"
             />
@@ -187,17 +187,28 @@ function App() {
         </div>
       </div>
 
-      <div className="stats-section bg-purple-1500 text-white">
-        {/* Stats & Video Section */}
-        <div className="container mx-auto py-8 md:py-16 px-4 flex flex-col md:flex-row flex-wrap items-center">
-          <div className="w-full md:w-1/3 mb-10 md:mb-0">
-            {/* Lightning Effect */}
-            <div className="lightning-container mb-6 md:mb-11 mt-6 md:mt-14 text-center md:text-left">
-              <img src="/Untitled design (96) 1.png" alt="Lightning effect" className="w-24 md:w-48 lightning" />
-            </div>
+      <div className="stats-section bg-purple-1500 text-white py-12 md:py-20 relative">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row relative">
+          {/* Stats Column - Positioned precisely on desktop */}
+          <div className="w-full md:w-1/2 relative">
+          <div 
+  className="lightning-container mb-6 md:mb-0 md:absolute"
+  style={{
+    width: "273px",
+    height: "70px",
+        left: "-60px"  }}
+>
+  <img 
+    src="/Untitled design (96) 1.png" 
+    alt="Lightning effect" 
+    className="w-full h-full object-contain md:w-[273px] md:h-[70px]"
+  />
+</div>
             
-            {/* Stats */}
-            <div className="stats-grid">
+            {/* Stats Grid with precise size and positioning */}
+            <div className="stats-grid md:absolute md:mt-0 mt-10" style={{width: '657px', height: '228px', left: '0px', top: '107px'}}>
+              {/* Main stat */}
               <div className="mb-8 text-center md:text-left">
                 <h3 className="text-4xl md:text-6xl font-bold text-white">
                   150<span className="text-2xl md:text-4xl">+</span>
@@ -205,22 +216,23 @@ function App() {
                 <p className="text-white text-lg md:text-xl tracking-wider">Universities participating</p>
               </div>
 
-              <div className="flex flex-wrap w-full justify-center md:justify-start">
-                <div className="w-full sm:w-1/3 mb-8 text-center md:text-left">
+              {/* Three smaller stats with specified gap */}
+              <div className="flex flex-wrap w-full justify-center md:justify-start" style={{gap: '20px'}}>
+                <div className="w-full sm:w-auto mb-8 text-center md:text-left">
                   <h3 className="text-4xl md:text-6xl font-bold text-white">
                     72<span className="text-2xl md:text-4xl">+</span>
                   </h3>
                   <p className="text-white text-lg md:text-xl tracking-wider">Judges</p>
                 </div>
 
-                <div className="w-full sm:w-1/3 mb-8 text-center md:text-left">
+                <div className="w-full sm:w-auto mb-8 text-center md:text-left">
                   <h3 className="text-4xl md:text-6xl font-bold text-white">
                     21
                   </h3>
                   <p className="text-white text-lg md:text-xl tracking-wider">Hackathons</p>
                 </div>
 
-                <div className="w-full sm:w-1/3 mb-8 text-center md:text-left">
+                <div className="w-full sm:w-auto mb-8 text-center md:text-left">
                   <h3 className="text-4xl md:text-6xl font-bold text-white">
                     36<span className="text-2xl md:text-4xl">+</span>
                   </h3>
@@ -230,21 +242,23 @@ function App() {
             </div>
           </div>
 
-          <div className="w-full md:w-2/3 flex justify-center mt-10 md:mt-0">
-            {/* Video Container */}
-            <div className="video-iframe-container w-full max-w-md md:max-w-xl lg:max-w-2xl">
+          {/* Video Container with exact dimensions */}
+          <div className="w-full md:w-1/2 mt-64 md:mt-0">
+            <div className="video-iframe-container md:absolute" style={{width: '641px', height: '351px', top: '0px', right: '0px'}}>
               <iframe 
                 className="w-full h-full rounded-lg"
+                style={{width: '641px', height: '351px'}}
                 src="https://www.youtube.com/embed/gi1kkMbfNAE"
                 title="HackIndia 2024 Finals - Highlights"
                 frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
             </div>
           </div>
         </div>
       </div>
+    </div>
 
       {/* Sponsors Section */}
       <div className="sponsors-section mt-20 md:mt-40 lg:mt-60">
