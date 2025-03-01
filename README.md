@@ -4,7 +4,7 @@
 This repository contains the frontend of a hackathon project, built using React and styled with Tailwind CSS. It is designed to be responsive, efficient, and easy to set up.  
 
 
-### 🚀 Setup Instructions  
+### Setup Instructions  
 
 Follow these steps to set up and run the project locally.  
 
@@ -35,7 +35,6 @@ If your project requires any environment variables, create a `.env` file in the 
 REACT_APP_API_KEY=your_api_key_here
 REACT_APP_BACKEND_URL=http://localhost:5000
 ```  
-Modify the values as per your requirements.  
 
 
 ### 📦 Dependencies  
@@ -59,7 +58,6 @@ npm install
 - PostCSS & Autoprefixer: Helps ensure styles are compatible across different browsers.  
 
 These technologies were chosen to create a scalable, maintainable, and modern frontend.  
-
 
 
 ### 💬 Contact  
