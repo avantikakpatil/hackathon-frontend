@@ -1,19 +1,70 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 
 function App() {
+  // Add a useEffect to handle responsive navigation for touch devices
+  useEffect(() => {
+    const navContainer = document.querySelector('.main-nav');
+    if (navContainer) {
+      // Add touch support for mobile scrolling of nav items
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      navContainer.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - navContainer.offsetLeft;
+        scrollLeft = navContainer.scrollLeft;
+      });
+
+      navContainer.addEventListener('mouseleave', () => {
+        isDown = false;
+      });
+
+      navContainer.addEventListener('mouseup', () => {
+        isDown = false;
+      });
+
+      navContainer.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - navContainer.offsetLeft;
+        const walk = (x - startX) * 2; // Scroll speed
+        navContainer.scrollLeft = scrollLeft - walk;
+      });
+
+      // Touch events for mobile
+      navContainer.addEventListener('touchstart', (e) => {
+        isDown = true;
+        startX = e.touches[0].pageX - navContainer.offsetLeft;
+        scrollLeft = navContainer.scrollLeft;
+      });
+
+      navContainer.addEventListener('touchend', () => {
+        isDown = false;
+      });
+
+      navContainer.addEventListener('touchmove', (e) => {
+        if (!isDown) return;
+        const x = e.touches[0].pageX - navContainer.offsetLeft;
+        const walk = (x - startX) * 2;
+        navContainer.scrollLeft = scrollLeft - walk;
+      });
+    }
+  }, []);
+
   return (
     <div className="App min-h-screen">
      <div className="background-video-container">
-  <video autoPlay loop muted className="background-video">
-    <source src="/-b972-4385-b947-78b4967cb57b.mp4" type="video/mp4" />
-  </video>
-  <div className="video-overlay"></div>
-</div>
+      <video autoPlay loop muted playsInline className="background-video">
+        <source src="/-b972-4385-b947-78b4967cb57b.mp4" type="video/mp4" />
+      </video>
+      <div className="video-overlay"></div>
+     </div>
 
       {/* Top Navigation Bar */}
       <header className="main-header">
-        <div className="container mx-auto flex justify-between items-center py-3 px-4 ml-14">
+        <div className="container mx-auto flex justify-between items-center py-3 px-4">
           <img 
             src="/logodb-PhotoRoom 1.png" 
             alt="DecodeBlock" 
@@ -23,7 +74,7 @@ function App() {
             <img 
               src="/Component 20.png" 
               alt="Sign In" 
-              className="sign-in-btn mr-20"
+              className="sign-in-btn"
             />
           </button>
         </div>
@@ -31,9 +82,9 @@ function App() {
 
       {/* Main Content */}
       <div className="main-content-wrapper w-full pt-5">
-        <div className="relative z-10 container mx-auto py-4 px-4 text-white flex justify-between items-center">
+        <div className="relative z-10 container mx-auto py-4 px-4 text-white flex flex-wrap justify-center">
           {/* Left Section (Logo) */}
-          <div className="flex items-center space-x-2 px-0 ml-20">
+          <div className="flex items-center space-x-2 px-0 mb-4 md:mb-0">
             <img 
               src="/Frame 1000006378.png" 
               alt="HackIndia" 
@@ -41,7 +92,7 @@ function App() {
             />
           </div>
 
-          <nav className="main-nav flex justify-between items-center mx-auto ml-20">
+          <nav className="main-nav flex items-center mx-auto">
             {[
               { src: "/Component 8.png", alt: "Overview" },
               { src: "/Component 36.png", alt: "Create Team" },
@@ -61,25 +112,23 @@ function App() {
           <img 
             src="/singularityNET.png" 
             alt="SingularityNET" 
-            className="singularity-logo w-[300px] h-[90px] flex justify-center items-center pb-4"
+            className="singularity-logo w-auto h-auto flex justify-center items-center pb-4"
           />
 
-<div className="mb-6 pb-1">
-  <div className="ml-[-270px]">
-    <img
-      src="/HackIndia2025.png" 
-      alt="HackIndia2025 Logo"
-      className="hackindia-logo"
-    />
-  </div>
-  {/* Remove or reduce this empty div if it's causing spacing issues */}
-  {/* <div className="mb-1 pb-1"></div> */}
-  <img
-    src="/India’s Biggest Web3 & AI Hackathon.png"
-    alt="India's Biggest Web3 & AI Hackathon"
-    className="hackathon-tagline"
-  />
-</div>
+          <div className="mb-6 pb-1">
+            <div className="text-center">
+              <img
+                src="/HackIndia2025.png" 
+                alt="HackIndia2025 Logo"
+                className="hackindia-logo"
+              />
+            </div>
+            <img
+              src="/India's Biggest Web3 & AI Hackathon.png"
+              alt="India's Biggest Web3 & AI Hackathon"
+              className="hackathon-tagline"
+            />
+          </div>
 
           <div className="flex justify-center mb-10">
             <div className="date-container flex justify-center">
@@ -91,20 +140,20 @@ function App() {
             </div>
           </div>
 
-          <div className="flex justify-center items-center space-x-8 mb-16 flex-wrap">
-            <div className="flex items-center">
+          <div className="flex flex-col md:flex-row justify-center items-center md:space-x-8 mb-16">
+            <div className="flex items-center mb-4 md:mb-0">
               <span className="text-hackIndia-orange font-bold text-[25px] leading-[36.88px] tracking-[3%] font-vtf">150+</span>
               <span className="text-white ml-2 text-[25px] font-vtf">Prize Pool</span>
             </div>
 
-            <div className="divider-vertical mx-4 hidden sm:block"></div>
+            <div className="divider-vertical mx-4 hidden md:block"></div>
 
-            <div className="flex items-center">
+            <div className="flex items-center mb-4 md:mb-0">
               <span className="text-hackIndia-orange font-bold text-[25px] leading-[36.88px] tracking-[3%] font-vtf">150+</span>
               <span className="text-white ml-2 text-[25px] font-vtf">Universities</span>
             </div>
 
-            <div className="divider-vertical mx-4 hidden sm:block"></div>
+            <div className="divider-vertical mx-4 hidden md:block"></div>
 
             <div className="flex items-center">
               <span className="text-hackIndia-orange font-bold text-[25px] leading-[36.88px] tracking-[3%] font-vtf">25,000+</span>
@@ -112,7 +161,7 @@ function App() {
             </div>
           </div>
 
-          <button className="register-btn-container w-[177px] h-[59px] mb-5">
+          <button className="register-btn-container w-auto h-auto mb-5">
             <img 
               src="/Component 17.png" 
               alt="Register Button" 
@@ -125,64 +174,65 @@ function App() {
       <div className="sponsors-scroll bg-gray-100 py-1 overflow-hidden relative w-full">
         <div className="flex space-x-5 animate-scroll">
           {/* Sponsor logos */}
-          <img src="/2 3255.png" alt="Sponsor 3255" className="h-12 m-2 flex-shrink-0" />
-          <img src="/1 780.png" alt="Sponsor 780" className="h-12 m-2 flex-shrink-0" />
-          <img src="/1 781.png" alt="Sponsor 781" className="h-12 m-2 flex-shrink-0" />
-          <img src="/2 3256.png" alt="Sponsor 3256" className="h-12 m-2 flex-shrink-0" />
+          <img src="/2 3255.png" alt="Sponsor 3255" className="h-8 sm:h-12 m-2 flex-shrink-0" />
+          <img src="/1 780.png" alt="Sponsor 780" className="h-8 sm:h-12 m-2 flex-shrink-0" />
+          <img src="/1 781.png" alt="Sponsor 781" className="h-8 sm:h-12 m-2 flex-shrink-0" />
+          <img src="/2 3256.png" alt="Sponsor 3256" className="h-8 sm:h-12 m-2 flex-shrink-0" />
 
           {/* Duplicate images for seamless infinite scrolling */}
-          <img src="/2 3255.png" alt="Sponsor 3255" className="h-12 m-2 flex-shrink-0" />
-          <img src="/1 780.png" alt="Sponsor 780" className="h-12 m-2 flex-shrink-0" />
-          <img src="/1 781.png" alt="Sponsor 781" className="h-12 m-2 flex-shrink-0" />
-          <img src="/2 3256.png" alt="Sponsor 3256" className="h-12 m-2 flex-shrink-0" />
+          <img src="/2 3255.png" alt="Sponsor 3255" className="h-8 sm:h-12 m-2 flex-shrink-0" />
+          <img src="/1 780.png" alt="Sponsor 780" className="h-8 sm:h-12 m-2 flex-shrink-0" />
+          <img src="/1 781.png" alt="Sponsor 781" className="h-8 sm:h-12 m-2 flex-shrink-0" />
+          <img src="/2 3256.png" alt="Sponsor 3256" className="h-8 sm:h-12 m-2 flex-shrink-0" />
         </div>
       </div>
 
       <div className="stats-section bg-purple-1500 text-white">
         {/* Stats & Video Section */}
-        <div className="container mx-auto py-16 px-4 flex flex-wrap items-center pl-0 ml-0">
-          <div className="w-full md:w-1/3 pr-4 md:pr-8">
+        <div className="container mx-auto py-8 md:py-16 px-4 flex flex-col md:flex-row flex-wrap items-center">
+          <div className="w-full md:w-1/3 mb-10 md:mb-0">
             {/* Lightning Effect */}
-            <div className="lightning-container mb-11 pl-0 ml-0 mt-14">
-              <img src="/Untitled design (96) 1.png" alt="Lightning effect" className="w-48 lightning" />
+            <div className="lightning-container mb-6 md:mb-11 mt-6 md:mt-14 text-center md:text-left">
+              <img src="/Untitled design (96) 1.png" alt="Lightning effect" className="w-24 md:w-48 lightning" />
             </div>
             
             {/* Stats */}
             <div className="stats-grid">
-              <div className="mb-8">
-                <h3 className="text-6xl font-bold text-white">
-                  150<span className="text-4xl">+</span>
+              <div className="mb-8 text-center md:text-left">
+                <h3 className="text-4xl md:text-6xl font-bold text-white">
+                  150<span className="text-2xl md:text-4xl">+</span>
                 </h3>
-                <p className="text-white text-xl tracking-wider">Universities participating</p>
+                <p className="text-white text-lg md:text-xl tracking-wider">Universities participating</p>
               </div>
 
-              <div className="flex flex-wrap w-full">
-                <div className="w-1/3 mb-8 pr-2">
-                  <h3 className="text-6xl font-bold text-white">
-                    72<span className="text-4xl">+</span>
+              <div className="flex flex-wrap w-full justify-center md:justify-start">
+                <div className="w-full sm:w-1/3 mb-8 text-center md:text-left">
+                  <h3 className="text-4xl md:text-6xl font-bold text-white">
+                    72<span className="text-2xl md:text-4xl">+</span>
                   </h3>
-                  <p className="text-white text-xl tracking-wider">Judges</p>
+                  <p className="text-white text-lg md:text-xl tracking-wider">Judges</p>
                 </div>
 
-                <div className="w-1/3 mb-8 px-2">
-                  <h3 className="text-6xl font-bold text-white">
+                <div className="w-full sm:w-1/3 mb-8 text-center md:text-left">
+                  <h3 className="text-4xl md:text-6xl font-bold text-white">
                     21
                   </h3>
-                  <p className="text-white text-xl tracking-wider">Hackathons</p>
+                  <p className="text-white text-lg md:text-xl tracking-wider">Hackathons</p>
                 </div>
 
-                <div className="w-1/3 mb-8 pl-2">
-                  <h3 className="text-6xl font-bold text-white">
-                    36<span className="text-4xl">+</span>
+                <div className="w-full sm:w-1/3 mb-8 text-center md:text-left">
+                  <h3 className="text-4xl md:text-6xl font-bold text-white">
+                    36<span className="text-2xl md:text-4xl">+</span>
                   </h3>
-                  <p className="text-white text-xl tracking-wider">Great Speakers</p>
+                  <p className="text-white text-lg md:text-xl tracking-wider">Great Speakers</p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="w-full flex justify-center">
+
+          <div className="w-full md:w-2/3 flex justify-center mt-10 md:mt-0">
             {/* Video Container */}
-            <div className="video-iframe-container">
+            <div className="video-iframe-container w-full max-w-md md:max-w-xl lg:max-w-2xl">
               <iframe 
                 className="w-full h-full rounded-lg"
                 src="https://www.youtube.com/embed/gi1kkMbfNAE"
@@ -197,16 +247,16 @@ function App() {
       </div>
 
       {/* Sponsors Section */}
-      <div className="sponsors-section">
-        <div className="sponsors-container">
+      <div className="sponsors-section mt-20 md:mt-40 lg:mt-60">
+        <div className="sponsors-container px-4">
           <img src="Frame 1000006391.png" alt="Sponsor Frame" className="sponsors-frame" />
         </div>
       </div>
 
-      <div className="footer-section">
-        <footer className="footer-container">
+      <div className="footer-section mt-10 md:mt-20">
+        <footer className="footer-container px-4">
           {/* Footer Image */}
-          <div>
+          <div className="flex justify-center">
             <img
               src="/Group 1000006140.png"
               alt="Footer Graphic"

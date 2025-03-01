@@ -25,16 +25,14 @@ h1, h2 {
 }
 
 .App {
-  
-    background: rgba(18, 0, 22, 0.621); /* Dark purple with adjusted transparency */
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-
-
+  background: rgba(18, 0, 22, 0.621); /* Dark purple with adjusted transparency */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 /* Background Video */
@@ -68,12 +66,13 @@ h1, h2 {
 /* Add this to ensure your tagline is properly displayed */
 .hackathon-tagline {
   width: auto;
-  max-width: 664px;
+  max-width: 100%;
   height: auto;
   object-fit: contain;
   margin-top: 10px;
   display: block; /* Make sure it's displayed as a block element */
 }
+
 /* Header Styles */
 .main-header {
   width: 100%;
@@ -83,15 +82,13 @@ h1, h2 {
 }
 
 .header-logo {
-  width: 240px;
-  height: 40px;
-  top: 18px;
-  left: 79px;
+  width: 200px;
+  height: auto;
 }
 
 .sign-in-btn {
-  width: 150px;
-  height: 53px;
+  width: 120px;
+  height: auto;
 }
 
 .sign-in-button {
@@ -122,29 +119,30 @@ h1, h2 {
 
 /* Navigation Styles */
 .main-nav {
-  height: 60px;
-  top: 114px;
-  left: 300px;
-  gap: 10px;
+  height: auto;
   border-radius: 10px;
   border-width: 1px;
-  padding: 12px 30px;
+  padding: 12px;
   border: 1px solid #DFDFDF1A;
   background: #28083A;
   box-shadow: 0px 1px 4px 0px #D9D9D94D;
+  overflow-x: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 
 .hackindia-small-logo {
-  width: 183px;
-  height: 38px;
-  top: 123px;
-  left: 99px;
-  gap: 9px;
+  width: 150px;
+  height: auto;
+  max-width: 100%;
 }
 
 .nav-container {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .nav-buttons-container {
@@ -156,6 +154,15 @@ h1, h2 {
   border-radius: 12px;
   padding: 4px;
   gap: 4px;
+}
+
+.nav-button {
+  flex: 0 0 auto;
+}
+
+.nav-button img {
+  max-width: 100%;
+  height: auto;
 }
 
 .nav-button:hover {
@@ -192,21 +199,26 @@ h1, h2 {
 /* Main Content Styles */
 .main-content-wrapper {
   position: relative;
+  width: 100%;
 }
 
 .singularity-logo {
+  width: 200px;
+  height: auto;
+  max-width: 100%;
   object-fit: contain;
 }
 
 .date-container {
-  width: 377px;
-  height: 52px;
+  width: 100%;
+  max-width: 377px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
   border-width: 1px;
-  padding: 10px 30px;
+  padding: 10px;
   background: linear-gradient(91.08deg, #6A1799 -29.38%, #230833 105.37%);
   border: 1px solid rgba(217, 217, 217, 0.3);
   position: relative;
@@ -244,6 +256,17 @@ h1, h2 {
 }
 
 /* Register Button */
+.register-btn-container {
+  width: 177px;
+  height: auto;
+  max-width: 100%;
+}
+
+.register-btn-container img {
+  width: 100%;
+  height: auto;
+}
+
 .register-btn-container img:hover {
   transform: scale(1.05);
   transition: 0.3s;
@@ -298,27 +321,53 @@ h1, h2 {
 
 /* Stats and Video Section */
 .stats-section {
-  background-color: var(--dark-bg);
+  background: rgba(11, 2, 12, 0); /* Dark purple with transparency */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  width: 100%;
+  margin-top: 50px;
 }
 
 .stats-grid {
-  position: absolute;
-  width: 657px;
-  height: 228px;
-  top: 1100px;
-  left: 95px;
-  gap: 20px;
+  position: relative;
+  width: 100%;
+  max-width: 657px;
+  margin: 0 auto;
+}
+
+.lightning-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.lightning {
+  width: 100%;
+  max-width: 48px;
+  height: auto;
+  opacity: 0.7;
+  filter: brightness(1.5) contrast(1.2);
 }
 
 .video-iframe-container {
-  position: absolute;
-  width: 641px;
-  height: 351px;
-  top: 975px;
-  left: 800px;
+  position: relative;
+  width: 100%;
+  max-width: 641px;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  margin: 30px auto;
+}
+
+.video-iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .play-button {
@@ -335,84 +384,67 @@ h1, h2 {
   box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
 }
 
-.stats-section {
-  background: rgba(11, 2, 12, 0); /* Dark purple with transparency */
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-}
 .play-button:hover {
   transform: scale(1.1);
   box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
 }
 
-/* Lightning effect */
-.lightning {
-  opacity: 0.7;
-  filter: brightness(1.5) contrast(1.2);
-}
-
 /* Sponsors section */
 .sponsors-section {
-  position: absolute;
-  height: 90px;
-  top: 1510px;
-  left: 1px;
+  position: relative;
+  height: auto;
   background-color: #f8f9fa;
   width: 100%;
   display: flex;
   align-items: center;
   padding: 10px 0;
+  margin-top: 50px;
 }
 
 .sponsors-container {
-  width: 1282px;
-  height: 100px;
-  top: -4px;
-  left: 100px;
-  gap: 60px;
-  margin-left: 100px; /* Added left margin */
-
+  width: 100%;
+  max-width: 1282px;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .sponsors-frame {
-  width: 1282px;
-  height: 100px;
-  left:60px;
+  width: 100%;
+  height: auto;
+  max-width: 1282px;
 }
 
-
+/* Sponsors scroll */
+.sponsors-scroll {
+  width: 100%;
+  overflow: hidden;
+}
 
 /* Footer section */
 .footer-section {
-  position: absolute;
-  height: 150px;
-  top: 1600px;
-  left: 1px;
+  position: relative;
+  height: auto;
   width: 100%;
   display: flex;
   align-items: center;
   padding: 10px 0;
   background: rgba(12, 1, 14, 0.85); /* Dark purple with transparency */
-
+  margin-top: 30px;
 }
 
 .footer-container {
   color: white;
   text-align: center;
-  padding-top: 0px;
-  margin-top: auto;
-  position: relative;
-  margin-left: 200px;
-  height: 32px;
-
+  padding: 10px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-
-
 .footer-graphic {
-  width: 1133px;
-  height: 24px;
+  width: 100%;
+  max-width: 1133px;
+  height: auto;
 }
 
 /* Custom scrollbar */
@@ -435,28 +467,27 @@ h1, h2 {
 
 /* HackIndia specific styles */
 .hackindia-logo {
-  height: 115px;
+  height: auto;
+  max-width: 100%;
   position: relative;
-  top: 0px;
-  left: 16%;
   font-family: "PROXON", sans-serif;
   font-weight: 400;
-  font-size: 95px;
-  line-height: 108px;
-  letter-spacing: 10%;
+  display: block;
+  margin: 0 auto;
 }
 
 .hackathon-tagline {
   width: auto;
-  max-width: 664px;
+  max-width: 100%;
   height: auto;
   object-fit: contain;
-  margin-top: 10px;
+  margin: 10px auto 0;
 }
 
 .hackathon-date {
   width: auto;
-  height: 32px;
+  max-width: 100%;
+  height: auto;
   object-fit: contain;
 }
 
@@ -490,52 +521,402 @@ h1, h2 {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
-  .nav-buttons-container {
-    flex-direction: column;
-    width: 100%;
+@media (max-width: 1200px) {
+  .container {
+    max-width: 100%;
+    padding: 0 15px;
   }
   
-  .purple-button {
+  .main-nav {
+    margin: 0 auto;
+    max-width: 90%;
+  }
+  
+  .ml-14, .ml-20 {
+    margin-left: 10px;
+  }
+  
+  .mr-20 {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 992px) {
+  .main-nav {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 8px;
+  }
+  
+  .nav-button img {
+    height: 30px;
+  }
+  
+  .stats-section .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stats-section .w-full.md\:w-1\/3 {
     width: 100%;
+    padding: 0 15px;
+  }
+  
+  .singularity-logo {
+    width: 180px;
+  }
+  
+  .hackindia-logo {
+    left: 0;
     text-align: center;
+    margin: 0 auto;
+  }
+  
+  .ml-[-270px] {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-logo {
+    width: 150px;
+  }
+  
+  .sign-in-btn {
+    width: 100px;
+  }
+  
+  .main-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 5px;
+    margin-top: 10px;
+    width: 95%;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .nav-button {
+    flex: 0 0 auto;
+  }
+  
+  .nav-button img {
+    height: 25px;
+  }
+  
+  .hackindia-small-logo {
+    width: 120px;
+  }
+  
+  .singularity-logo {
+    width: 150px;
+  }
+  
+  .hackindia-logo {
+    height: auto;
+    font-size: 60px;
+    line-height: normal;
+  }
+  
+  .date-container {
+    max-width: 300px;
+  }
+  
+  .hackathon-date {
+    height: 25px;
+  }
+  
+  .stats-grid {
+    margin-top: 20px;
+  }
+  
+  .stats-grid h3 {
+    font-size: 3rem;
+  }
+  
+  .stats-grid p {
+    font-size: 1rem;
   }
   
   .divider-vertical {
     display: none;
   }
   
-  h1 {
+  .flex.items-center.space-x-8 {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .flex.items-center {
+    justify-content: center;
+  }
+  
+  .register-btn-container {
+    width: 150px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-logo {
+    width: 120px;
+  }
+  
+  .sign-in-btn {
+    width: 80px;
+  }
+  
+  .main-header .container {
+    padding: 10px;
+  }
+  
+  .main-nav {
+    width: 90%;
+    margin: 0 auto;
+    padding: 3px;
+  }
+  
+  .nav-button img {
+    height: 20px;
+  }
+  
+  .hackindia-small-logo {
+    width: 100px;
+    margin: 0 auto;
+  }
+  
+  .singularity-logo {
+    width: 120px;
+  }
+  
+  .hackindia-logo {
+    height: auto;
+    font-size: 40px;
+    line-height: normal;
+  }
+  
+  .main-content-wrapper .flex.justify-between {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .main-content-wrapper .flex.items-center.space-x-2 {
+    margin: 0 auto;
+    padding: 10px 0;
+  }
+  
+  .date-container {
+    max-width: 250px;
+  }
+  
+  .hackathon-date {
+    height: 20px;
+  }
+  
+  .stats-grid h3 {
     font-size: 2.5rem;
   }
+  
+  .stats-grid p {
+    font-size: 0.875rem;
+  }
+  
+  .stats-grid .w-1\/3 {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 0;
+  }
+  
+  .stats-grid .flex.flex-wrap {
+    flex-direction: column;
+  }
+  
+  .video-iframe-container {
+    margin-top: 40px;
+  }
+  
+  .sponsors-container {
+    padding: 0 5px;
+  }
+  
+  .register-btn-container {
+    width: 130px;
+  }
+  
+  .text-\[25px\] {
+    font-size: 18px !important;
+  }
+}
 
+@media (max-width: 375px) {
+  .header-logo {
+    width: 100px;
+  }
+  
+  .sign-in-btn {
+    width: 70px;
+  }
+  
+  .singularity-logo {
+    width: 100px;
+  }
+  
+  .hackindia-logo {
+    font-size: 35px;
+  }
+  
+  .date-container {
+    max-width: 200px;
+  }
+  
+  .hackathon-date {
+    height: 18px;
+  }
+  
+  .stats-grid h3 {
+    font-size: 2rem;
+  }
+  
+  .stats-grid p {
+    font-size: 0.75rem;
+  }
+  
+  .register-btn-container {
+    width: 110px;
+  }
+  
+  .text-\[25px\] {
+    font-size: 16px !important;
+  }
+}
+
+/* Fix for the main content areas to ensure proper spacing on mobile */
+@media (max-width: 992px) {
+  .main-content-wrapper .container {
+    flex-direction: column;
+  }
+  
+  .main-content-wrapper .main-nav {
+    margin: 10px auto;
+  }
+  
+  .main-content-wrapper main {
+    padding-top: 20px;
+  }
+}
+
+/* Fix for the stats section layout on mobile */
+@media (max-width: 992px) {
+  .stats-section .container {
+    padding-top: 30px;
+    padding-bottom: 350px; /* Make room for the video */
+  }
+  
+  .lightning-container {
+    text-align: center;
+    margin-top: 0;
+  }
+  
   .stats-grid {
     position: relative;
+    top: auto;
+    left: auto;
     width: 100%;
-    left: 0;
-    top: 0;
+    height: auto;
+    margin: 0 auto;
   }
-
+  
   .video-iframe-container {
-    position: relative;
-    width: 100%;
-    left: 0;
-    top: 20px;
-    margin-top: 250px;
+    position: absolute;
+    top: auto;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 500px;
   }
+}
 
+/* Adjust sponsors and footer for mobile */
+@media (max-width: 992px) {
   .sponsors-section, .footer-section {
     position: relative;
     top: auto;
+    left: auto;
     margin-top: 20px;
   }
-
+  
   .sponsors-container, .footer-container {
-    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  
+  .footer-graphic {
+    margin: 0 auto;
+  }
+}
+
+/* Fix for the hackathon logo alignment */
+@media (max-width: 768px) {
+  .mb-6 .ml-\[-270px\] {
     margin-left: 0;
+    text-align: center;
+  }
+  
+  .hackindia-logo {
+    position: static;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+/* Ensure spacing between elements is maintained on mobile */
+@media (max-width: 768px) {
+  .mb-6, .mb-10, .mb-16 {
+    margin-bottom: 15px;
+  }
+  
+  .space-x-8 > * {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .flex.justify-center.items-center.space-x-8 {
+    gap: 10px;
+  }
+}
+
+/* Make sure video fits on mobile */
+@media (max-width: 768px) {
+  .stats-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .sponsors-frame, .footer-graphic {
+  .w-full.md\:w-1\/3 {
     width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .w-full.flex.justify-center {
+    width: 100%;
+  }
+}
+
+/* Ensure proper layout of navigation on small screens */
+@media (max-width: 576px) {
+  .main-header .container.mx-auto.flex.justify-between.items-center {
+    padding: 10px;
+  }
+  
+  .ml-14, .ml-20, .mr-20 {
+    margin: 0 5px;
+  }
+  
+  .px-4 {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
