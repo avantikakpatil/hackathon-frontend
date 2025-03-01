@@ -191,7 +191,7 @@ function App() {
   <div className="container mx-auto px-4">
     <div className="flex flex-col md:flex-row relative">
       {/* Stats Column - Positioned precisely on desktop */}
-      <div className="w-full md:w-1/2 relative">
+      <div className="w-full md:w-1/2 relative mb-96 sm:mb-96 md:mb-0">
         <div 
           className="lightning-container mb-6 md:mb-0 md:absolute hidden sm:block"
           style={{
@@ -208,7 +208,7 @@ function App() {
         </div>
         
         {/* Stats Grid with responsive adjustments */}
-        <div className="stats-grid md:absolute md:mt-0 mt-10 mx-auto md:mx-0" 
+        <div className="stats-grid relative md:absolute md:mt-0 mt-10 mx-auto md:mx-0" 
              style={{
                width: '100%', 
                maxWidth: '657px', 
@@ -251,8 +251,8 @@ function App() {
       </div>
 
       {/* Video Container with responsive dimensions */}
-      <div className="w-full md:w-1/2 mt-96 sm:mt-80 md:mt-0">
-        <div className="video-iframe-container relative md:absolute mx-auto md:mx-0" 
+      <div className="w-full md:w-1/2">
+        <div className="video-iframe-container relative md:absolute mx-auto md:mx-0 mt-4 md:mt-0" 
              style={{
                width: '100%',
                maxWidth: '641px', 
@@ -274,6 +274,7 @@ function App() {
     </div>
   </div>
 </div>
+
       {/* Sponsors Section */}
       <div className="sponsors-section mt-20 md:mt-40 lg:mt-60">
         <div className="sponsors-container px-4">
